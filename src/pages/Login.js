@@ -1,4 +1,3 @@
-// Login.jsx
 // import "../Auth.css";
 // import { Link, useNavigate } from "react-router-dom";
 // import { useState, useEffect } from "react";
