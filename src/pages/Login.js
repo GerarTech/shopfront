@@ -100,10 +100,6 @@
 
 // export default Login;
 
-
-
-
-
 import "../Auth.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
