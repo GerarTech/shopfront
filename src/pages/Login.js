@@ -137,7 +137,7 @@ function Login() {
           phone_number,
           password,
         },
-        { withCredentials: true }
+      
       );
 
       // Step 3: Redirect or store user info
