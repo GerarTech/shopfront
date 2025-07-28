@@ -1,9 +1,9 @@
 import "../Auth.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react"; // Import useContext
 import axios from "axios";
 import shopifyLogo from '../shopify-logo.png';
-import LanguageGlobe from './LanguageGlobe';
+import LanguageGlobe, { LanguageContext } from './LanguageGlobe'; // Import LanguageContext
 
 // const API = 'http://localhost:5000/api/auth';
 // const API_URL = process.env.REACT_APP_API_URL;
@@ -11,6 +11,7 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:500
 
 function Login() {
   const navigate = useNavigate();
+  const { t } = useContext(LanguageContext); // Consume the translation function from context
 
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
@@ -21,7 +22,6 @@ function Login() {
     setError('');
     setLoading(true);
 
-    
     try {
       const res = await axios.post(`${API_BASE_URL}/auth/login`, {
         phone,
@@ -43,7 +43,8 @@ function Login() {
 
     } catch (err) {
       console.error(err);
-      setError(err.response?.data?.message || 'Login failed.');
+      // Use translated error message
+      setError(err.response?.data?.message || t('loginFailed'));
     } finally {
       setLoading(false);
     }
@@ -55,32 +56,32 @@ function Login() {
         <div className="top-right"><LanguageGlobe /></div>
 
         <img src={shopifyLogo} alt="Logo" className="logo" />
-        <h2 className="brand-name">Shopify</h2>
-        <p className="tagline">Talking</p>
+        <h2 className="brand-name">{t('brandName')}</h2> {/* Translated */}
+        <p className="tagline">{t('tagline')}</p> {/* Translated */}
 
         {error && <p className="error-message">{error}</p>}
 
         <input
           type="text"
-          placeholder="Phone Number"
+          placeholder={t('phoneNumberPlaceholder')} {/* Translated */}
           className="auth-input"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder={t('passwordPlaceholder')} {/* Translated */}
           className="auth-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <button className="auth-button" onClick={handleLogin} disabled={loading}>
-          {loading ? 'Logging in...' : 'LOG IN'}
+          {loading ? t('loggingInButton') : t('logInButton')} {/* Translated */}
         </button>
 
-        <Link to="/register" className="auth-link">Create an account</Link>
-        <p className="footer-text">Powered by Shopify</p>
+        <Link to="/register" className="auth-link">{t('createAccountLink')}</Link> {/* Translated */}
+        <p className="footer-text">{t('poweredBy')}</p> {/* Translated */}
       </div>
     </div>
   );

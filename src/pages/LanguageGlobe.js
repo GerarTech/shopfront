@@ -1,4 +1,4 @@
-
+// LanguageGlobe.js
 import React, { useState, createContext, useContext, useEffect } from 'react';
 // import '../LanguageSelector.css'; // Keep this if you have external CSS, or remove if using Tailwind only
 
@@ -19,7 +19,15 @@ const translations = {
     close: '✖️ Close',
     clickToChoose: 'Click the button to choose your language.',
     currentLanguageDisplay: 'Current Language:',
-    // Add more English translations here
+    brandName: 'Shopify',
+    tagline: 'Talking',
+    loginFailed: 'Login failed.',
+    phoneNumberPlaceholder: 'Phone Number',
+    passwordPlaceholder: 'Password',
+    logInButton: 'LOG IN',
+    loggingInButton: 'Logging in...',
+    createAccountLink: 'Create an account',
+    poweredBy: 'Powered by Shopify',
   },
   'Spanish': {
     welcome: '¡Bienvenido!',
@@ -29,7 +37,15 @@ const translations = {
     close: '✖️ Cerrar',
     clickToChoose: 'Haz clic en el botón para elegir tu idioma.',
     currentLanguageDisplay: 'Idioma Actual:',
-    // Add more Spanish translations here
+    brandName: 'Shopify',
+    tagline: 'Hablando',
+    loginFailed: 'Error al iniciar sesión.',
+    phoneNumberPlaceholder: 'Número de Teléfono',
+    passwordPlaceholder: 'Contraseña',
+    logInButton: 'INICIAR SESIÓN',
+    loggingInButton: 'Iniciando sesión...',
+    createAccountLink: 'Crear una cuenta',
+    poweredBy: 'Con la tecnología de Shopify',
   },
   'Arabic': {
     welcome: 'أهلاً بك!',
@@ -39,7 +55,15 @@ const translations = {
     close: '✖️ إغلاق',
     clickToChoose: 'انقر الزر لاختيار لغتك.',
     currentLanguageDisplay: 'اللغة الحالية:',
-    // Add more Arabic translations here
+    brandName: 'شوبيفاي',
+    tagline: 'يتحدث',
+    loginFailed: 'فشل تسجيل الدخول.',
+    phoneNumberPlaceholder: 'رقم الهاتف',
+    passwordPlaceholder: 'كلمة المرور',
+    logInButton: 'تسجيل الدخول',
+    loggingInButton: 'جاري تسجيل الدخول...',
+    createAccountLink: 'إنشاء حساب',
+    poweredBy: 'مدعوم من شوبيفاي',
   },
   // Add more languages and their translations here
 };
