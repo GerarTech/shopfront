@@ -98,7 +98,7 @@ const ReferralCode = () => {
                 <p style={styles.linkText}>
                     Referral Link: <br />
                     {/* Assuming your frontend domain is shopify-clone-orpin.vercel.app as seen in screenshots */}
-                    <span style={styles.refLink}>https://shopify-clone-orpin.vercel.app/register?ref={invitationCode}</span>
+                    <span style={styles.refLink}>https://shopfront-tau.vercel.app/register?ref={invitationCode}</span>
                 </p>
             </div>
 
