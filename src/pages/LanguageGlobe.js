@@ -1,4 +1,4 @@
-/ LanguageGlobe.js
+
 import React, { useState, createContext, useContext, useEffect } from 'react';
 // import '../LanguageSelector.css'; // Keep this if you have external CSS, or remove if using Tailwind only
 
