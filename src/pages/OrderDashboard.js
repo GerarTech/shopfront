@@ -27,6 +27,16 @@ const OrderDashboard = () => {
     const [openFaq, setOpenFaq] = useState(null);
     const toggleFaq = (index) => setOpenFaq((prev) => (prev === index ? null : index));
 
+    // --- ADDED MISSING useState DECLARATIONS HERE ---
+    const [counts, setCounts] = useState({
+        uncompletedOrders: 0,
+        completedOrders: 0,
+        dailyOrders: 0
+    });
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
+    // --- END ADDED MISSING useState DECLARATIONS ---
+
     const [balanceInUsd, setBalanceInUsd] = useState(0);
     const [rawTrxBalance, setRawTrxBalance] = useState(0);
     const [loadingBalance, setLoadingBalance] = useState(true);
@@ -162,9 +172,9 @@ const OrderDashboard = () => {
         return (
             <div className="order-dashboard">
                 <div className="stats-container">
-                    <div className="stat-box">{t('loadingText')}</div> {/* Translated */}
-                    <div className="stat-box">{t('loadingText')}</div> {/* Translated */}
-                    <div className="stat-box">{t('loadingText')}</div> {/* Translated */}
+                    <div className="stat-box">{t('loadingText')}</div> 
+                    <div className="stat-box">{t('loadingText')}</div> 
+                    <div className="stat-box">{t('loadingText')}</div> 
                 </div>
             </div>
         );
@@ -174,7 +184,7 @@ const OrderDashboard = () => {
         return (
             <div className="order-dashboard">
                 <p className="error-message">Error: {error}</p>
-                <button onClick={fetchDashboardSummary}>{t('retryButton')}</button> {/* Translated */}
+                <button onClick={fetchDashboardSummary}>{t('retryButton')}</button> 
             </div>
         );
     }
@@ -185,21 +195,21 @@ const OrderDashboard = () => {
             <div className="stats-container">
                 <div className="stat-box">
                     <div className="stat-number">{counts.uncompletedOrders}</div>
-                    <div className="stat-label">{t('uncompletedOrders')}</div> {/* Translated */}
+                    <div className="stat-label">{t('uncompletedOrders')}</div> 
                 </div>
                 <div className="stat-box">
                     <div className="stat-number">{counts.completedOrders}</div>
-                    <div className="stat-label">{t('completedOrders')}</div> {/* Translated */}
+                    <div className="stat-label">{t('completedOrders')}</div> 
                 </div>
                 <div className="stat-box">
                     <div className="stat-number">{counts.dailyOrders}</div>
-                    <div className="stat-label">{t('dailyOrders')}</div> {/* Translated */}
+                    <div className="stat-label">{t('dailyOrders')}</div> 
                 </div>
             </div>
 
             {/* Action Button */}
             <div className="action-button">
-                <button onClick={handleStartOrderTask}>{t('startOrderTask')}</button> {/* Translated */}
+                <button onClick={handleStartOrderTask}>{t('startOrderTask')}</button> 
             </div>
 
             {/* You can add your navigation icons back here if they were removed for brevity */}
