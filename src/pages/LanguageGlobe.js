@@ -253,7 +253,7 @@ const LanguageGlobe = () => {
 
             {/* Language selection list content */}
             <div className="language-dropdown"> {/* Removed Tailwind classes, relies on LanguageSelector.css */}
-              <p className="choose-label">{t('chooseLanguage')}</p> 
+              <p className="choose-label">{t('chooseLanguage')}</p> {/* Translated */}
               <ul>
                 {languages.map((lang) => (
                   <li
