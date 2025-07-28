@@ -1,6 +1,6 @@
 // LanguageGlobe.js
 import React, { useState, createContext, useContext, useEffect } from 'react';
-// import '../LanguageSelector.css'; // Keep this if you have external CSS, or remove if using Tailwind only
+import '../LanguageSelector.css'; // This import will now be the primary source of styling
 
 // 1. Create a Language Context
 // This context will be used to provide and consume language-related state
@@ -229,79 +229,36 @@ const LanguageGlobe = () => {
 
   return (
     <>
-      {/* Tailwind CSS CDN and Inter font for basic styling.
-          Ideally, these belong in your public/index.html or main layout file. */}
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-      <style>
-        {`
-        body {
-          font-family: 'Inter', sans-serif;
-        }
-        /* Basic animations for modal */
-        .animate-fade-in {
-          animation: fadeIn 0.3s ease-out forwards;
-        }
-        .animate-slide-up {
-          animation: slideUp 0.3s ease-out forwards;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes slideUp {
-          from { transform: translateY(20px) scale(0.95); opacity: 0; }
-          to { transform: translateY(0) scale(1); opacity: 1; }
-        }
-
-        /* If you are using LanguageSelector.css, ensure its styles
-           are compatible or override these Tailwind classes as needed.
-           For example, you might define:
-           .language-overlay { ... }
-           .language-selector { ... }
-           .close-button { ... }
-           .language-dropdown { ... }
-           .choose-label { ... }
-           .submit-button { ... }
-           .globe-icon { ... }
-           .active { ... }
-        */
-        `}
-      </style>
-
       {/* Globe Icon to open the language selector */}
       <img
         src="https://cdn-icons-png.flaticon.com/512/44/44386.png"
         alt="Globe Icon"
-        className="globe-icon w-10 h-10 cursor-pointer fixed top-4 right-4 z-40 rounded-full shadow-md hover:scale-105 transition-transform duration-200"
+        className="globe-icon" // Removed Tailwind classes, relies on LanguageSelector.css
         onClick={() => setIsOpen(true)}
         title={t('selectLanguageButton')} // Translated title
       />
 
       {/* Language Selection Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 animate-fade-in">
-          <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-sm mx-auto transform transition-all duration-300 ease-out scale-100 opacity-100 animate-slide-up">
+        <div className="language-overlay"> {/* Removed Tailwind classes, relies on LanguageSelector.css */}
+          <div className="language-selector"> {/* Removed Tailwind classes, relies on LanguageSelector.css */}
             {/* Close button for the modal */}
-            <div className="flex justify-end">
-              <button
-                className="text-gray-500 hover:text-gray-700 text-2xl leading-none p-1 rounded-full hover:bg-gray-100 transition-colors"
-                onClick={() => setIsOpen(false)}
-                title={t('close')} // Translated title for accessibility
-              >
-                ✖️
-              </button>
-            </div>
+            <button
+              className="close-button" // Removed Tailwind classes, relies on LanguageSelector.css
+              onClick={() => setIsOpen(false)}
+              title={t('close')} // Translated title for accessibility
+            >
+              ✖️
+            </button>
 
             {/* Language selection list content */}
-            <div className="mt-4 text-center">
-              <p className="text-xl font-bold text-gray-800 mb-4">{t('chooseLanguage')}</p>
-              <ul className="max-h-60 overflow-y-auto border border-gray-200 rounded-lg bg-gray-50 p-2 mb-6 shadow-inner">
+            <div className="language-dropdown"> {/* Removed Tailwind classes, relies on LanguageSelector.css */}
+              <p className="choose-label">{t('chooseLanguage')}</p> {/* Translated */}
+              <ul>
                 {languages.map((lang) => (
                   <li
                     key={lang}
-                    className={`py-2.5 px-3 rounded-lg cursor-pointer text-gray-700 text-left transition-all duration-200 ease-in-out
-                                ${lang === tempSelectedLanguage ? 'bg-blue-500 text-white font-semibold shadow-md transform scale-102' : 'hover:bg-gray-200'}`}
+                    className={lang === tempSelectedLanguage ? 'active' : ''} // Relies on LanguageSelector.css for 'active'
                     onClick={() => handleLanguageClick(lang)} // Updates temporary selection
                   >
                     {lang}
@@ -312,7 +269,7 @@ const LanguageGlobe = () => {
 
             {/* Confirm selection button */}
             <button
-              className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+              className="submit-button" // Removed Tailwind classes, relies on LanguageSelector.css
               onClick={handleConfirm} // Calls handleConfirm to apply changes
               title={t('confirmSelection')} // Translated title for accessibility
             >
