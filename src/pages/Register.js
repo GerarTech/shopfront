@@ -96,21 +96,21 @@ function Register() {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2 className="brand-name">{t('registrationTo')}</h2> {/* Translated */}
-        <p className="tagline">{t('createYourAccount')}</p> {/* Translated */}
+        <h2 className="brand-name">{t('registrationTo')}</h2> 
+        <p className="tagline">{t('createYourAccount')}</p> 
 
         {error && <p className="error-message">{error}</p>}
         {message && <p className="success-message">{message}</p>}
 
-        <input type="text" placeholder={t('usernamePlaceholder')} name="username" value={formData.username} onChange={handleChange} className="auth-input" required /> {/* Translated */}
-        <input type="text" placeholder={t('phoneNumberPlaceholder')} name="phone" value={formData.phone} onChange={handleChange} className="auth-input" required /> {/* Translated */}
-        <input type="password" placeholder={t('passwordPlaceholder')} name="password" value={formData.password} onChange={handleChange} className="auth-input" required /> {/* Translated */}
-        <input type="password" placeholder={t('confirmPasswordPlaceholder')} name="confirm_password" value={formData.confirm_password} onChange={handleChange} className="auth-input" required /> {/* Translated */}
-        <input type="password" placeholder={t('withdrawalPasswordPlaceholder')} name="withdrawal_password" value={formData.withdrawal_password} onChange={handleChange} className="auth-input" required /> {/* Translated */}
+        <input type="text" placeholder={t('usernamePlaceholder')} name="username" value={formData.username} onChange={handleChange} className="auth-input" required /> 
+        <input type="text" placeholder={t('phoneNumberPlaceholder')} name="phone" value={formData.phone} onChange={handleChange} className="auth-input" required /> 
+        <input type="password" placeholder={t('passwordPlaceholder')} name="password" value={formData.password} onChange={handleChange} className="auth-input" required /> 
+        <input type="password" placeholder={t('confirmPasswordPlaceholder')} name="confirm_password" value={formData.confirm_password} onChange={handleChange} className="auth-input" required /> 
+        <input type="password" placeholder={t('withdrawalPasswordPlaceholder')} name="withdrawal_password" value={formData.withdrawal_password} onChange={handleChange} className="auth-input" required /> 
 
         <input
           type="text"
-          placeholder={t('referralCodePlaceholder')} {/* Translated */}
+          placeholder={t('referralCodePlaceholder')} 
           name="referralCode"
           value={referralCodeInput}
           onChange={handleChange}
@@ -119,8 +119,8 @@ function Register() {
           readOnly={!!referralCodeInput}
         />
 
-        <button className="auth-button" onClick={handleSubmit}>{t('registerButton')}</button> {/* Translated */}
-        <Link to="/login" className="auth-link">{t('backToLoginLink')}</Link> {/* Translated */}
+        <button className="auth-button" onClick={handleSubmit}>{t('registerButton')}</button> 
+        <Link to="/login" className="auth-link">{t('backToLoginLink')}</Link> 
       </div>
     </div>
   );

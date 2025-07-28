@@ -56,32 +56,32 @@ function Login() {
         <div className="top-right"><LanguageGlobe /></div>
 
         <img src={shopifyLogo} alt="Logo" className="logo" />
-        <h2 className="brand-name">{t('brandName')}</h2> {/* Translated */}
-        <p className="tagline">{t('tagline')}</p> {/* Translated */}
+        <h2 className="brand-name">{t('brandName')}</h2> 
+        <p className="tagline">{t('tagline')}</p> 
 
         {error && <p className="error-message">{error}</p>}
 
         <input
           type="text"
-          placeholder={t('phoneNumberPlaceholder')} {/* Translated */}
+          placeholder={t('phoneNumberPlaceholder')} 
           className="auth-input"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />
         <input
           type="password"
-          placeholder={t('passwordPlaceholder')} {/* Translated */}
+          placeholder={t('passwordPlaceholder')} 
           className="auth-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
         <button className="auth-button" onClick={handleLogin} disabled={loading}>
-          {loading ? t('loggingInButton') : t('logInButton')} {/* Translated */}
+          {loading ? t('loggingInButton') : t('logInButton')} 
         </button>
 
-        <Link to="/register" className="auth-link">{t('createAccountLink')}</Link> {/* Translated */}
-        <p className="footer-text">{t('poweredBy')}</p> {/* Translated */}
+        <Link to="/register" className="auth-link">{t('createAccountLink')}</Link> 
+        <p className="footer-text">{t('poweredBy')}</p> 
       </div>
     </div>
   );

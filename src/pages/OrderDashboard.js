@@ -165,9 +165,9 @@ const OrderDashboard = () => {
     return (
       <div className="order-dashboard">
         <div className="stats-container">
-          <div className="stat-box">{t('loadingText')}</div> {/* Translated */}
-          <div className="stat-box">{t('loadingText')}</div> {/* Translated */}
-          <div className="stat-box">{t('loadingText')}</div> {/* Translated */}
+          <div className="stat-box">{t('loadingText')}</div> 
+          <div className="stat-box">{t('loadingText')}</div> 
+          <div className="stat-box">{t('loadingText')}</div> 
         </div>
       </div>
     );
@@ -177,7 +177,7 @@ const OrderDashboard = () => {
     return (
       <div className="order-dashboard">
         <p className="error-message">Error: {error}</p>
-        <button onClick={fetchDashboardSummary}>{t('retryButton')}</button> {/* Translated */}
+        <button onClick={fetchDashboardSummary}>{t('retryButton')}</button> 
       </div>
     );
   }
@@ -188,16 +188,16 @@ const OrderDashboard = () => {
         <div className="user-info">
           <FaUser className="icon" />
           {user && <span className="username">{user.username}</span>}
-          <button onClick={handleLogout} className="logout-button">{t('logoutButton')}</button> {/* Translated */}
+          <button onClick={handleLogout} className="logout-button">{t('logoutButton')}</button> 
         </div>
 
         <div className="balance">
           {loadingBalance ? (
-            <span className="amount">{t('loadingText')}</span> {/* Translated */}
+            <span className="amount">{t('loadingText')}</span> 
           ) : (
             <>
               <span className="amount">{balanceInUsd.toFixed(2)}</span>
-              <span className="currency">{t('currencySymbol')}</span> {/* Translated */}
+              <span className="currency">{t('currencySymbol')}</span> 
               <small className="raw-balance">{rawTrxBalance.toFixed(2)} TRX</small>
               <button onClick={() => navigate("/recharge")} className="add-balance-button" title={t('addFundsButton')}>+</button> {/* Translated title */}
             </>
@@ -206,9 +206,9 @@ const OrderDashboard = () => {
       </header>
 
       <section className="product-section">
-        <h2>{t('topProductsHeading')}</h2> {/* Translated */}
+        <h2>{t('topProductsHeading')}</h2> 
         {loadingProducts ? (
-          <p>{t('loadingProductsText')}</p> {/* Translated */}
+          <p>{t('loadingProductsText')}</p> 
         ) : productsError ? (
           <p style={{ color: 'red' }}>{productsError} 🙁</p>
         ) : products.length > 0 ? (
@@ -222,21 +222,21 @@ const OrderDashboard = () => {
             ))}
           </div>
         ) : (
-          <p>{t('noProductsFound')}</p> {/* Translated */}
+          <p>{t('noProductsFound')}</p> 
         )}
       </section>
       <div className="congrats-text">
-        <div className="slide-in">{t('congratulationsPrefix')} {phones[idx]}</div> {/* Translated */}
+        <div className="slide-in">{t('congratulationsPrefix')} {phones[idx]}</div> 
       </div>
-      <button className="start-button" onClick={handleStartOrderTask}>{t('startMakingMoneyButton')}</button> {/* Translated */}
+      <button className="start-button" onClick={handleStartOrderTask}>{t('startMakingMoneyButton')}</button> 
       <section className="additional-info">
-        <h2>{t('aboutUsHeading')}</h2> {/* Translated */}
-        <p>{t('aboutUsText')}</p> {/* Translated */}
-        <h3>{t('latestIncidentHeading')}</h3> {/* Translated */}
-        <p>{t('noReportedIncidents')}</p> {/* Translated */}
-        <h3>{t('trcHeading')}</h3> {/* Translated */}
-        <p>{t('trcText')}</p> {/* Translated */}
-        <h3>{t('faqHeading')}</h3> {/* Translated */}
+        <h2>{t('aboutUsHeading')}</h2> 
+        <p>{t('aboutUsText')}</p> 
+        <h3>{t('latestIncidentHeading')}</h3> 
+        <p>{t('noReportedIncidents')}</p> 
+        <h3>{t('trcHeading')}</h3> 
+        <p>{t('trcText')}</p> 
+        <h3>{t('faqHeading')}</h3> 
         <div className="faq-list">
           {faqs.map((faq, index) => (
             <div className={`faq-item ${openFaq === index ? "active" : ""}`} key={index}>
@@ -246,11 +246,11 @@ const OrderDashboard = () => {
           ))}
         </div>
         <section className="partnered-section">
-          <h2>{t('partneredWithHeading')}</h2> {/* Translated */}
+          <h2>{t('partneredWithHeading')}</h2> 
           <div className="partners-logos">
-            <div className="partner-logo-placeholder">{t('partnerPlaceholder')} 1</div> {/* Translated */}
-            <div className="partner-logo-placeholder">{t('partnerPlaceholder')} 2</div> {/* Translated */}
-            <div className="partner-logo-placeholder">{t('partnerPlaceholder')} 3</div> {/* Translated */}
+            <div className="partner-logo-placeholder">{t('partnerPlaceholder')} 1</div> 
+            <div className="partner-logo-placeholder">{t('partnerPlaceholder')} 2</div> 
+            <div className="partner-logo-placeholder">{t('partnerPlaceholder')} 3</div> 
           </div>
         </section>
       </section>
